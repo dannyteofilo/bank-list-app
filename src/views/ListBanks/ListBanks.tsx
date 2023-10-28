@@ -4,7 +4,6 @@ import { useGetListQuery } from '../../redux/api/bank';
 
 const ListBanks = () => {
     const { data, isFetching, isLoading, error } = useGetListQuery(null);
-    console.log('data: ', data)
     if (isFetching || isLoading) return <p>Loading ...</p>;
     if (error) return <p>Some error</p>;
     return (
