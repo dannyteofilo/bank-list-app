@@ -1,3 +1,5 @@
+import CardBank from '../../components/CardBank/CardBank';
+import styles from './listBanks.module.css'
 import { useGetListQuery } from '../../redux/api/bank';
 
 const ListBanks = () => {
@@ -6,13 +8,13 @@ const ListBanks = () => {
     if (isFetching || isLoading) return <p>Loading ...</p>;
     if (error) return <p>Some error</p>;
     return (
-        <div>
-            <h2>list</h2>
-            <ul>
+        <div className={styles.container}>
+            <section className={styles.list}>
                 {data?.map((bank) => (
-                    <li key={bank.bankName}>{bank.bankName}</li>
+                    <CardBank key={bank.bankName} bankData={bank} />
                 ))}
-            </ul>
+            </section>
+
         </div>
     )
 }

@@ -4,7 +4,7 @@ import ListBanks from './views/ListBanks/ListBanks'
 function App() {
   return (
     <div className={styles.background}>
-      <h1>BankList App</h1>
+      <h1 className={styles.title}>BankList App</h1>
       <ListBanks/>
     </div>
   )
