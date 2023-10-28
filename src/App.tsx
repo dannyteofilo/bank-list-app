@@ -2,8 +2,11 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { useGetListQuery } from './redux/api/bank';
 
 function App() {
+  const { data } = useGetListQuery(null);
+  console.log('data: ',data)
   const [count, setCount] = useState(0)
 
   return (
